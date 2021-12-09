@@ -2,10 +2,11 @@ package console
 
 import (
 	"flag"
-	"github.com/confetti-framework/contract/inter"
-	"github.com/confetti-framework/foundation/console"
 	"src/app/console/commands"
 	"src/app/console/getters"
+
+	"github.com/confetti-framework/contract/inter"
+	"github.com/confetti-framework/foundation/console"
 )
 
 // flagGetters contains a list with custom flag.Getters, you can create custom
@@ -25,8 +26,8 @@ func NewKernel(app inter.App) console.Kernel {
 		Commands: []inter.Command{
 			console.AppServe{},
 			console.LogClear{},
-			commands.ExampleCommand{},
-			console.AppInfo{},
+			// commands.ExampleCommand{},
+			commands.PostReq{},
 		},
 		FlagProviders: []func() []flag.Getter{flagGetters},
 	}
